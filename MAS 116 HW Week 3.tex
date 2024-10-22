@@ -1,0 +1,55 @@
+\documentclass[11pt, a4]{amsart}
+\author{Muhammad Ghazali bin Md Apandi}
+\title{MAS116 : Presentation Homework 3}
+\date{\today}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+
+\begin{document}
+\maketitle
+
+\section{The square-root of 2}
+
+
+We are going to investigate a solution of the
+equation
+\begin{equation}
+\label{eq:root-2}
+	x^2=2.
+\end{equation}
+
+The positive solution to equation(\ref{eq:root-2}) is denoted $\sqrt{2}$.
+\begin{defn}
+	The real number $\sqrt{2}$ is irrational.
+\end{defn}
+
+\begin{lem}
+	Any rational number can be written in the form of $\frac{a}{b}$ with $a$ and $b$ as coprime integer.
+\end{lem}
+
+\begin{proof}
+	Firstly, rational number can be written as $\frac{a}{b}$ where $a$,$b$ $\in \mathbb{Z}$ and $b \neq 0$ and $b > a$. Then, we can find the greatest common divisor(gcd) of both $a$ and $b$. From this, we can let gcd$(a,b) = c$ where $c$ is the greatest common divisor for both $a$ and $b$. This means that $a$ and $b$ are divisible by $c$. Hence, there exist integers $m$ and $n$ such that 
+	\begin{align}
+	\label{a}
+	a = c \cdot m 
+	\end{align}
+	\begin{align}
+	\label{b}
+	b = c \cdot n
+	\end{align}
+	where $m,n \in \mathbb{Z}$.
+	
+	Then we can substitute \ref{a} and \ref{b} to write a new form of $\frac{a}{b}$ where
+	\begin{equation}
+	\frac{a}{b} = \frac{c.m}{c.n} = \frac{m}{n}.
+	\end{equation}
+	Since $c$ are gcd$(a,b)$, this implies that $m$ and $n$ has greatest common divisor of 1. Hence, this prove that $m$ and $n$ are coprime.
+\end{proof}
+
+\end{document}
