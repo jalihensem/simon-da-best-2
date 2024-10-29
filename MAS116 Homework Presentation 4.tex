@@ -1,0 +1,89 @@
+\documentclass[11pt, a4paper]{amsart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{parskip}
+\usepackage{hyperref}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{note}[thm]{Note}
+\newtheorem{eg}[thm]{Example}
+\newtheorem{egs}[thm]{Examples}
+
+% Include title, author and date, as appropriate
+\title{MAS116 Presentation Homework 4}
+\author{Muhammad Ghazali bin Md Apandi}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Lagrange Interpolation}
+
+	Lagrange interpolation is a way to find a polynomial function from given point of a graph when the function is not given.  
+	
+\begin{defn}
+	Lagrange interpolation is an $n$-th degree polynomial expression of the function $f(x)$. 	
+\end{defn}
+
+Suppose that we were given a point of $(x_i,y_i) \in \mathbb{R}^2$ where $i = 0,1,2$. In order to find the polynomial function for this point, we can use Lagrange interpolation formula to find the function. The formula for Lagrange interpolation for three given point is given by 
+\begin{equation}
+\label{a}
+	f(x)=\frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}y_0 + \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}y_1 + \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}y_2.
+\end{equation}
+
+\begin{defn}
+Quadratic function is a polynomial function with more than one variable where the highest exponent for the variable is 2.
+\end{defn}
+
+From \ref{a}, we can see that the function is a quadratic polynomial if we expand out the brackets in the function. This is because the highest degree of $x$ in the function is 2.
+
+The other way to find the highest degree of a variable of the polynomial function by Lagrange interpolation is by the number of point given. For example, from \ref{a}, we can see that the number of point given to us is 3 and we can get the quadratic polynomial from this equation. Therefore, we can conclude that the $n$-th order of a polynomial has $n-1$ number of given point.
+
+To understand better, we can visualize this by giving $(x_i,y_i)$ some value. For example, by replacing $(x_i,y_i)$ with $(0,0)$, $(\frac{\pi}{4},\frac{1}{\sqrt{2}})$ and $(\frac{3\pi}{4},\frac{1}{\sqrt{2}})$, we can visualize this through a graph.
+
+
+\begin{figure}
+	\includegraphics[width=0.8\textwidth]{geogebra-export.png}
+	\caption{Graph of $f(x)=\sin x$ and $f(x)=\frac{-8\sqrt{2}x^2+8\sqrt{2}\pi x}{3\pi ^2}$}
+	\label{fig:geogebra}
+\end{figure}
+
+From the Figure~\ref{fig:geogebra}, we can see that $\frac{-8\sqrt{2}x^2+8\sqrt{2}\pi x}{3\pi ^2}$ is fairly close to follow the $f(x)=\sin x$. This means that the function of $\frac{-8\sqrt{2}x^2+8\sqrt{2}\pi x}{3\pi ^2}$ is interpolating to the function of $f(x) = \sin x$.
+
+To find a point where the point is $(x_i,y_i) \in \mathbb{R}^2$ where $i=\{0,1,2,3,\ldots,n\}$, we can use the formula given by
+\begin{equation}
+\label{b}
+	f(x) = \sum_{i=0}^{k} y_i[\prod_{j=0}^{k-1}\frac{(x-x_j)}{(x_i-x_j)}].
+\end{equation}
+
+From \ref{b}, we can find a polynomial function with $n$ number of points to make more accurate function. 
+
+For example, $f(x) = \frac{-8\sqrt{2}x^2+8\sqrt{2}\pi x}{3\pi ^2}$ can be more closely interpolated to the function of $f(x) = \sin x$ if we were given a lot of points rather than only 3.
+
+\subsection{Reference}
+The material here comes from 
+\begin{itemize}
+
+\item \url{https://www.simplilearn.com/tutorials/statistics-tutorial/lagrange-interpolation}
+\item \url{https://www.geeksforgeeks.org/lagrange-interpolation-formula/}
+\item \url{https://en.wikipedia.org/wiki/Lagrange_polynomial}
+\item \url{https://en.wikipedia.org/wiki/Quadratic_function}
+\item \url{https://www.cuemath.com/calculus/quadratic-functions/}
+\item \url{https://www.overleaf.com/learn/latex/Pgfplots_package#2D_plots}
+\item \url{https://mathworld.wolfram.com/LagrangeInterpolatingPolynomial.html}
+
+\end{itemize}
+
+
+\end{document}
