@@ -1,0 +1,55 @@
+\documentclass[11pt, a4paper]{amsart}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{parskip}
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newenvironment{solution}
+{\begin{proof}[Solution]}
+{\end{proof}}
+
+
+\title{MAS116: Homework 5}
+\author{Muhammad Ghazali bin Md Apandi}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+	Let $f_n$ denote the $n$\emph{-th of Fibonacci number}. Thus, $f_1 = 1$, $f_2 = 1$ and $f_{n+2} = f_{n+1} + f_n$ for all $n \in \mathbb{N}$. Use induction to show that	
+	
+\[
+	f_1^2 + f_2^2 + \ldots +f_n^2 = f_n f_{n+1}
+\]
+
+for all natural numbers $n \in \mathbb{N}$.
+\end{problem}
+
+\begin{solution}
+	For each natural number $n \in \mathbb{N}$, let $P(n)$ be the statement $f_1^2 + f_2^2 + \ldots +f_n^2 = f_n f_{n+1}$.
+	
+	Firstly, we must check the base step for the induction. Hence, we can let $n = 1$. When $n = 1$, we have a statement of $P(1)$ where $1^2 = 1 \times 1$. Thus, $n = 1$ is true.
+	
+	Then, we can move to the next step which is inductive step. We assume that $P(k)$ is true for some $k \in \mathbb{N}$. Thus, 
+	$$
+	\sum_{i=1}^{k} f_i^2 = f_k f_{k+1}.
+	$$
+	
+	From this, by assumption, we then have
+	\begin{align*}
+	\sum_{i=1}^{k+1} f_i^2 
+	&= f_1^2 + f_2^2 + \ldots + f_k^2 + f_{k+1}^2 \quad\text{(by assumption)}\quad \\
+	&= f_k f_{k+1} + f_{k+1}^2 \\
+	&= f_{k+1}(f_k + f_{k+1})  \\
+	&= f_{k+1} f_{k+2}
+	\end{align*}
+	
+	Thus, $P(k+1)$ is true if and only if $P(k)$ is true.
+	Hence, by induction, $P(n)$ is true for all $n \in \mathbb{N}$.
+\end{solution}
+
+
+\end{document} 
