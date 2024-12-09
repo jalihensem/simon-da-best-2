@@ -1,0 +1,105 @@
+html {
+    background-color: #225566;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: #383931;
+    width: 700px;
+    border-color: #646756;
+    border-style: solid;
+    border-radius: 8px;
+    padding: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    margin: 0.1em;
+    border-width: 3px;
+    border-color: #646756;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 1em;
+    background-color: #f2eee3;
+    text-align: center;
+}
+
+section {
+    border-width: 1px;
+    border-color: #000;
+    border-style: solid;
+    border-radius: 6px;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.1em;
+    padding-bottom: 0.5em;
+    background-color: white;
+    margin-top: 1em;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: #f2eee3;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+td, th {
+    padding: 0.4em;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-style: solid; 
+    border-color: black;
+}
+  
+th {
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+} 
+
+.law {
+text-align: center;
+font-weight: italic;
+width: 80%;
+}
+
+table {
+    border-spacing: 0;
+    margin: 0;
+    text-indent: 0;
+    border: 0;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+table td {
+    border-width: 2px;
+    border-style: outset;
+    border-color: #E0D6CC;
+    padding: 0.4em;
+    background-color: #fffff1;
+}
+
+table th {
+    border-width: 2px;
+    border-style: outset;
+    border-color: #E0D6CC;
+    padding: 0.4em;
+    background-color: #fffff1;
+    font-weight: bold;
+    text-align: left;
+}
+
+tr.break td {
+    background-color: #dfdfdf;
+    font-size: 50%;
+}
+
+table.week_by_week td:first-child {
+    text-align: center;
+}
+
+
