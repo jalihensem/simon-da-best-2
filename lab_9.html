@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"
+  integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4"
+  crossorigin="anonymous">
+</script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<head>
+    <title>
+    Newton's Laws
+    </title>
+    <link rel="stylesheet" type="text/css" href="lab_9.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <header>
+        <h1> Newton's Laws </h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>
+            Newton's Laws of Motion
+            </h2>
+            
+            <small> 
+            The following is copied more-or-less verbatim from a previous version of the Wikipedia page 'Newton's Laws of Motion' for the purposes of playing around with MathJax. 
+            </small>
+            <div class='law'>
+            Newton's laws of motion are three physical laws that form the basis for classical mechanics. They describe the relationship between the forces acting on a body and its motion due to those forces. They have been expressed in several different ways over nearly three centuries, and can be summarized as follows.
+            <ul>
+            <li>
+            First law.  If an object experiences no net force, then its velocity is constant: the object is either at rest (if its velocity is zero), or it moves in a straight line with constant speed (if its velocity is nonzero).
+            </li>
+            <li>
+            Second law.  For a body with constant mass, the acceleration a of the body is parallel and directly proportional to the net force F acting on the body, is in the direction of the net force, and is inversely proportional to the mass m of the body, i.e., $F=ma$. In general, the force is directly proportional to the rate of change of momentum of the body, i.e., 
+            \[
+            F=\frac{d}{dt}(mv).
+            \]
+            </li>
+            <li>
+            Third law. When a first body exerts a force $F_{1}$ on a second body, the second body simultaneously exerts a force $F_{2}=-F_{1}$ on the first body. This means that $F_{1}$ and $F_{2}$ are equal in magnitude and opposite in direction.
+            </li>
+            </ul>
+            </div>
+            The three laws of motion were first compiled by Sir Isaac Newton in his work Philosophiae Naturalis Principia Mathematica, first published in 1687. Newton used them to explain and investigate the motion of many physical objects and systems. For example, in the third volume of the text, Newton showed that these laws of motion, combined with his law of universal gravitation, explained Kepler's laws of planetary motion.
+        </section>
+        
+        <section>
+            <h2>
+            Newton's Laws of Gravitation
+            </h2>
+            
+            <small> 
+            What follows is from a previous version of the Wikipedia page 'Newton's law of universal gravitation'.
+            </small>
+            
+            Newton's law of universal gravitation states that every point mass in the universe attracts every other point mass with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between them. (Separately it was shown that large spherically symmetrical masses attract and are attracted as if all their mass were concentrated at their centers.) This is a general physical law derived from empirical observations by what Newton called induction. It is a part of classical mechanics and was formulated in Newton's work Philosophiae Naturalis Principia Mathematica ("the Principia"), first published on 5 July 1687. (When Newton's book was presented in 1686 to the Royal Society, Robert Hooke made a claim that Newton had obtained the inverse square law from his; see the History section below.) In modern language, the law states the following.
+
+            Every point mass attracts every single other point mass by a force pointing along the line intersecting both points. The force is proportional to the product of the two masses and inversely proportional to the square of the distance between them: F=(G m1 m2)/r^2,
+            where 
+            F is the magnitude of the force between the masses,
+            G is the gravitational constant,
+            m1 is the first mass,
+            m2 is the second mass, and
+            r is the distance between the centers of the masses.
+        </section>
+        
+        <section>
+            <h2>
+            Appendix 
+            </h2>
+            <p>
+            The table below shows the SI units for the quantities
+            involved in the above discussion.
+            </p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th> Symbol </th>
+                        <th> Quantity </th>
+                        <th> SI Unit </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> F </td>
+                        <td> Force </td>
+                        <td> Newton(N) </td>
+                    </tr>
+                    <tr>
+                        <td> m </td>
+                        <td> Mass </td>
+                        <td> Kilogram(kg)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section>
+            <script 
+  src="https://cdn.jsdelivr.net/npm/code-prettify@0.1.0/loader/run_prettify.min.js" 
+  integrity="sha384-zmh8Dmggdxvu7C40fh1eFJPr2jrabJSODpgn/6OHI8psbd7rR1RPX8zfYr/HGZIr"
+  crossorigin="anonymous" >
+            </script>
+            <pre class="prettyprint linenums">
+                <code>
+import numpy as np
+import matplotlib.pyplot as plt
+
+G = 6.67430e-11
+
+print("Calculating the gravitational force between two point masses\r\n")
+
+m_1 = float(input("Mass 1 (kg): "))
+m_2 = float(input("Mass 2 (kg): "))
+r_max = float(input("Maximum distance (m): "))
+r_min = -1
+
+while (r_min != r_min) or  (r_min <= 0) or (r_min >= r_max):
+    try:
+        r_min = float(input("Minimum distance, > 0 (m): "))
+    except ValueError:
+        print("This needs to be a positive number.")
+
+r = np.linspace(r_min, r_max, 300)
+F = G * m_1 * m_2 / r**2
+
+plt.plot(r, F)
+plt.title("Gravitational force")
+plt.xlabel("distance, r")
+plt.ylabel("force, F")
+plt.show()  
+                </code>
+            </pre class="prettyprint linenums">
+            
+            <p>
+            <iframe src="https://trinket.io/embed/python/5da4108daf77" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            </p>
+        </section>
+    </main>
+</body>
+</html>
+
+
+            
